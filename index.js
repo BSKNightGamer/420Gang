@@ -20,6 +20,7 @@ app.listen(port, () => {
 eventHandler(client);
 
 const { SelectRow } = require('./Modal/selectmenu');
+const { rowBtn } = require('./Modal/button');
 
 client.on("interactionCreate", async (interaction, client) => {
 
@@ -108,7 +109,7 @@ client.on("interactionCreate", async (interaction, client) => {
 
             } else if (i.values[0] === "cancel") {
                 i.update({
-                    components: [SelectRow]
+                    components: [SelectRow, rowBtn]
                 });
             }
 
@@ -176,5 +177,6 @@ client.on("interactionCreate", async (interaction, client) => {
 });
 
 client.login(process.env.Token);
+
 
 
