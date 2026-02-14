@@ -5,6 +5,18 @@ const eventHandler = require('./handlers/eventHandler.js');
 const fs = require('fs');
 const axios = require('axios');
 
+const express = require('express');
+const app = express();
+const port = process.env.PORT | 4000;
+
+app.get('/', (req, res) => {
+    res.send('บอทออนไลน์เรียบร้อยแล้ว!');
+});
+
+app.listen(port, () => {
+    console.log(`Server running at ${port}/`);
+});
+
 eventHandler(client);
 
 const { SelectRow } = require('./Modal/selectmenu');
