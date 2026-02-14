@@ -175,5 +175,6 @@ client.on("interactionCreate", async (interaction, client) => {
 
 });
 
-client.login("MTQyMzMwNDk2MzYxMzc4NjE3Ng.GH-3g_.wh1_d2gcS3XMPinSOXpOaiaq17voMqkSHkvIzU");
+client.login(process.env.Token);
+
 
