@@ -12,7 +12,8 @@ module.exports = {
 	// options: [],
 
 	callback: async (client, interaction) => {
-		
+
+		await interaction.deferReply();
 		const i = interaction;
 		
 		const embed = new Discord.EmbedBuilder()
@@ -23,6 +24,10 @@ module.exports = {
 			.setColor("#999999")
 			.setTimestamp();
 
+		i.reply({
+			content: "ติดตั้งระบบสำเร็จแล้ว!"
+		})
+
 		i.channel.send({
 			embeds: [embed],
 			components: [SelectRow, rowBtn]
@@ -30,3 +35,4 @@ module.exports = {
 
 	},
 };
+
