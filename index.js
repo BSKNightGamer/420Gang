@@ -24,6 +24,7 @@ const { rowBtn } = require('./Modal/button');
 
 client.on("interactionCreate", async (interaction, client) => {
 
+    await interaction.deferReply();
     const i = interaction;
 
     if (i.isStringSelectMenu()) {
@@ -177,6 +178,7 @@ client.on("interactionCreate", async (interaction, client) => {
 });
 
 client.login(process.env.Token);
+
 
 
 
