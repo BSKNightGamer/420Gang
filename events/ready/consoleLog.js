@@ -5,4 +5,14 @@ module.exports = (client) => {
 
 	console.log(`✅ ${client.user.tag} is online.`);
 
+	client.user.setActivity({
+		
+		name: "V 1.1",
+
+		type: Discord.ActivityType.Streaming,
+
+		url: "http://youtube.com/"
+		
+    })
+
 };
