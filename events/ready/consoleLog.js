@@ -11,9 +11,10 @@ module.exports = (client) => {
 
 		type: Discord.ActivityType.Streaming,
 
-		url: "http://youtube.com/"
+		url: "https://www.twitch.tv/xtencrud"
 		
     })
 
 };
+
 
