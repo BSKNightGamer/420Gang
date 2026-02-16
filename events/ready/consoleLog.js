@@ -7,7 +7,7 @@ module.exports = (client) => {
 
 	client.user.setActivity({
 		
-		name: "V 1.1",
+		name: "V 1.1.1",
 
 		type: Discord.ActivityType.Streaming,
 
@@ -16,3 +16,4 @@ module.exports = (client) => {
     })
 
 };
+
