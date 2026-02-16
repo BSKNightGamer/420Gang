@@ -65,10 +65,9 @@ client.on("interactionCreate", async (interaction, client) => {
                 const row4 = new Discord.ActionRowBuilder().addComponents(datetime);
 
                 modal.addComponents(row, row2, row3, row4);
-                i.showModal(modal);
-
-                await interaction.deferReply();
-                i.reply({
+                await i.showModal(modal);
+                
+                await i.reply({
                     content: "กดเมนูสำเร็จเรียบร้อย!",
                     ephemeral: true
                 })
@@ -111,21 +110,20 @@ client.on("interactionCreate", async (interaction, client) => {
                 const row4 = new Discord.ActionRowBuilder().addComponents(datetime);
 
                 modal.addComponents(row, row2, row3, row4);
-                i.showModal(modal);
+                await i.showModal(modal);
 
-                await interaction.deferReply();
-                i.reply({
+                await i.reply({
                     content: "กดเมนูสำเร็จเรียบร้อย!",
                     ephemeral: true
                 })
 
             } else if (i.values[0] === "cancel") {
                 
-                i.update({
+                await i.update({
                     components: [SelectRow, rowBtn]
                 });
 
-                i.reply({
+                await i.reply({
                     content: "กดเมนูสำเร็จเรียบร้อย!",
                     ephemeral: true
                 })
@@ -157,8 +155,7 @@ client.on("interactionCreate", async (interaction, client) => {
                 .setColor("#00ff00")
                 .setTimestamp();
 
-            await interaction.deferReply();
-            i.reply({
+            await i.reply({
                 embeds: [success],
                 ephemeral: true
             })
@@ -185,8 +182,7 @@ client.on("interactionCreate", async (interaction, client) => {
                 .setColor("#00ff00")
                 .setTimestamp();
 
-            await interaction.deferReply();
-            i.reply({
+            await i.reply({
                 embeds: [success],
                 ephemeral: true
             })
@@ -197,6 +193,7 @@ client.on("interactionCreate", async (interaction, client) => {
 });
 
 client.login(process.env.Token);
+
 
 
 
