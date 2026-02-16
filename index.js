@@ -68,6 +68,11 @@ client.on("interactionCreate", async (interaction, client) => {
                 modal.addComponents(row, row2, row3, row4);
                 i.showModal(modal);
 
+                i.reply({
+                    content: "กดเมนูสำเร็จเรียบร้อย!",
+                    ephemeral: true
+                })
+
             }
                 
             if (i.values[0] === "ลาปกติ") {
@@ -108,10 +113,21 @@ client.on("interactionCreate", async (interaction, client) => {
                 modal.addComponents(row, row2, row3, row4);
                 i.showModal(modal);
 
+                i.reply({
+                    content: "กดเมนูสำเร็จเรียบร้อย!",
+                    ephemeral: true
+                })
+
             } else if (i.values[0] === "cancel") {
+                
                 i.update({
                     components: [SelectRow, rowBtn]
                 });
+
+                i.reply({
+                    content: "กดเมนูสำเร็จเรียบร้อย!",
+                    ephemeral: true
+                })
             }
 
         }
@@ -178,6 +194,7 @@ client.on("interactionCreate", async (interaction, client) => {
 });
 
 client.login(process.env.Token);
+
 
 
 
