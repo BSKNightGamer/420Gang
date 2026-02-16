@@ -23,8 +23,7 @@ const { SelectRow } = require('./Modal/selectmenu');
 const { rowBtn } = require('./Modal/button');
 
 client.on("interactionCreate", async (interaction, client) => {
-
-    await interaction.deferReply();
+    
     const i = interaction;
 
     if (i.isStringSelectMenu()) {
@@ -68,6 +67,7 @@ client.on("interactionCreate", async (interaction, client) => {
                 modal.addComponents(row, row2, row3, row4);
                 i.showModal(modal);
 
+                await interaction.deferReply();
                 i.reply({
                     content: "กดเมนูสำเร็จเรียบร้อย!",
                     ephemeral: true
@@ -113,6 +113,7 @@ client.on("interactionCreate", async (interaction, client) => {
                 modal.addComponents(row, row2, row3, row4);
                 i.showModal(modal);
 
+                await interaction.deferReply();
                 i.reply({
                     content: "กดเมนูสำเร็จเรียบร้อย!",
                     ephemeral: true
@@ -156,6 +157,7 @@ client.on("interactionCreate", async (interaction, client) => {
                 .setColor("#00ff00")
                 .setTimestamp();
 
+            await interaction.deferReply();
             i.reply({
                 embeds: [success],
                 ephemeral: true
@@ -183,6 +185,7 @@ client.on("interactionCreate", async (interaction, client) => {
                 .setColor("#00ff00")
                 .setTimestamp();
 
+            await interaction.deferReply();
             i.reply({
                 embeds: [success],
                 ephemeral: true
@@ -194,6 +197,7 @@ client.on("interactionCreate", async (interaction, client) => {
 });
 
 client.login(process.env.Token);
+
 
 
 
